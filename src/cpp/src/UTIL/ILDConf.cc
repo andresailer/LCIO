@@ -5,7 +5,7 @@ namespace UTIL {
   // this string should never be changed really
   std::string ILDCellID0::encoder_string = "subdet:5,side:-2,layer:9,module:8,sensor:8" ;
   
-  // Note: the definition of static const ints might not be strictly needed as in-class declarqtion and initialization
+  // Note: the definition of static const ints might not be strictly needed as in-class declaration and initialization
   //       is typically enough, however there are cases where this would result in undefined symbol linker errors
   //       ( e.g. when the constant is used in a method that takes a const reference as an argument, such as MYTESTS() 
   //         - see http://stackoverflow.com/questions/3025997/c-defining-static-const-integer-members-in-class-definition )
