@@ -24,8 +24,11 @@ before_install:
   - sudo /etc/init.d/autofs stop
   - sudo cvmfs_config setup
   - sudo mkdir -p /cvmfs/clicdp.cern.ch
+  - sudo mkdir -p /cvmfs/sft.cern.ch
   - sudo mount -t cvmfs clicdp.cern.ch /cvmfs/clicdp.cern.ch
+  - sudo mount -t cvmfs sft.cern.ch /cvmfs/sft.cern.ch
   - ls /cvmfs/clicdp.cern.ch
+  - ls /cvmfs/sft.cern.ch
 
 # command to install dependencies
 install:
