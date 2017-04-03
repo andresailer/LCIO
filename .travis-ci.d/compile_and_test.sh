@@ -6,7 +6,9 @@ source $ILCSOFT/init_ilcsoft.sh
 cd /Package
 mkdir build
 cd build
-cmake -GNinja -DUSE_CXX11=ON -DBUILD_ROOTDICT=ON -DCMAKE_CXX_FLAGS="-fdiagnostics-color=always" .. && \
+cmake -GNinja -DUSE_CXX11=ON -DBUILD_ROOTDICT=ON -DCMAKE_CXX_FLAGS="-fdiagnostics-color=always" \
+      -D LCIO_GENERATE_HEADERS=ON \
+      -D INSTALL_JAR=ON -D LCIO_JAVA_USE_MAVEN=OFF .. && \
 ninja && \
 ninja install && \
 ctest --output-on-failure
