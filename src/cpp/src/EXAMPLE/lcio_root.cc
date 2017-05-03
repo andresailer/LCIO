@@ -192,7 +192,7 @@ extern "C" size_t root_fread(void *ptr, size_t size, size_t nmemb, FILE *stream)
     size_t len = size*nmemb;
     TFile* f = (TFile*)stream;
     size_t offset = f->GetRelOffset();
-    if ( f->GetBytesRead()+len > f->GetSize() ) {
+    if ( f->GetBytesRead()+len > size_t(f->GetSize()) ) {
       if ( LCIO_ROOT_DEBUG>0 ) info(f,"FAILED: READ(%d)",len);
       return 0;
     }
@@ -300,6 +300,7 @@ namespace   {
   };
 }
 
+#if 0
 PosixIO* POSIX_ROOT()  {
   typedef PosixIO _IO;
   static _IO p;
@@ -320,8 +321,6 @@ PosixIO* POSIX_ROOT()  {
   return &p;
 }
 
-
-#if 0
 static PosixIO* io = POSIX_ROOT();
 #endif
 
